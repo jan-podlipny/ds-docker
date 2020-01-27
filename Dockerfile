@@ -21,8 +21,7 @@ RUN pip3 install --upgrade nose tqdm pydot pydotplus watermark geopy joblib pill
 RUN apt-get -y install graphviz
 
 COPY docker_files/entry-point.sh /
-
-# Final setup: directories, permissions, ssh login, symlinks, etc
+# Final setup: directories, permissions, etc
 RUN mkdir -p /home/user && \
 
 WORKDIR /home/user
