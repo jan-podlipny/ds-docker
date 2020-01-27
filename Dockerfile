@@ -6,7 +6,7 @@ RUN apt-get install --no-install-recommends -y apt-utils software-properties-com
 RUN apt-get install -y python3 python3-dev python-distribute python3-pip git
 
 # metadata
-version = '1.0'
+#version = '1.0'
 LABEL maintainer = 'Jan Podlipny <jpodlipny@gmail.com>'
 
 # main python packages
