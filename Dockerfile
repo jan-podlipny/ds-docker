@@ -40,6 +40,8 @@ RUN pip install --upgrade pip
 RUN pip install requests
 RUN apt-get install curl -y
 
+RUN pip install xonsh
+
 RUN pip install jupyter --upgrade
 RUN pip install jupyterlab --upgrade
 
