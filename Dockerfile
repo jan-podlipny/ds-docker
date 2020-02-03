@@ -59,6 +59,7 @@ RUN pip install numpy
 RUN pip install scipy
 RUN apt-get install liblzma-dev
 RUN pip install pandas
+RUN pip install pandas-profiling[notebook,html]
 
 RUN pip install scikit-learn
 RUN pip install lightgbm
