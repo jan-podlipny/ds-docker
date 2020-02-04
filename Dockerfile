@@ -19,7 +19,6 @@ RUN apt-get install -y build-essential  \
     libbz2-dev \
     zlib1g-dev \
     openssl \
-    liblzma-dev\
     libffi-dev \
     python3-dev \
     python3-setuptools \
@@ -55,17 +54,24 @@ RUN apt-get install bash -y
 RUN pip install bash_kernel
 RUN python -m bash_kernel.install
 
+#qol
 RUN pip install xonsh
 RUN pip install PrettyTable
 
-
+#scientific stack
 RUN pip install numpy
-RUN pip install matplotlib
 RUN pip install scipy
+
+#tabular data
 RUN pip install pandas
 RUN pip install pandas-profiling[notebook,html]
-RUN pip install seaborn
 
+#visualization
+RUN pip install matplotlib
+RUN pip install seaborn
+RUN pip install plotly==4.5.0
+
+#machine learning
 RUN pip install scikit-learn
 RUN pip install lightgbm
 RUN pip install xgboost
