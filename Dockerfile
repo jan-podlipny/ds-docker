@@ -14,6 +14,7 @@ RUN apt-get install -y build-essential  \
     libsqlite3-dev \
     tk-dev \
     libgdbm-dev \
+    liblzma-dev \
     libc6-dev \
     libbz2-dev \
     zlib1g-dev \
@@ -23,6 +24,8 @@ RUN apt-get install -y build-essential  \
     python3-dev \
     python3-setuptools \
     wget
+
+    
 
 RUN mkdir /tmp/Python37 \
     && cd /tmp/Python37 \
@@ -57,10 +60,21 @@ RUN pip install PrettyTable
 
 
 RUN pip install numpy
+RUN pip install matplotlib
 RUN pip install scipy
 RUN pip install pandas
 RUN pip install pandas-profiling[notebook,html]
+RUN pip install seaborn
 
 RUN pip install scikit-learn
 RUN pip install lightgbm
 RUN pip install xgboost
+
+ENV MAIN_PATH=/usr/local/bin/default_risk
+ENV LIBS_PATH=${MAIN_PATH}/libs
+ENV CONFIG_PATH=${MAIN_PATH}/config
+ENV NOTEBOOK_PATH=${MAIN_PATH}/notebooks
+
+EXPOSE 8888
+
+CMD cd ${MAIN_PATH} && sh config/run_jupyter.sh
