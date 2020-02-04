@@ -1,8 +1,6 @@
 # Using ubuntu 18.04 as base image
 FROM ubuntu:18.04
 
-WORKDIR /home/user
-
 ENV DEBIAN_FRONTEND noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN true
 
@@ -20,6 +18,7 @@ RUN apt-get install -y build-essential  \
     libbz2-dev \
     zlib1g-dev \
     openssl \
+    liblzma-dev\
     libffi-dev \
     python3-dev \
     python3-setuptools \
@@ -40,8 +39,6 @@ RUN pip install --upgrade pip
 RUN pip install requests
 RUN apt-get install curl -y
 
-RUN pip install xonsh
-
 RUN pip install jupyter --upgrade
 RUN pip install jupyterlab --upgrade
 
@@ -55,9 +52,12 @@ RUN apt-get install bash -y
 RUN pip install bash_kernel
 RUN python -m bash_kernel.install
 
+RUN pip install xonsh
+RUN pip install PrettyTable
+
+
 RUN pip install numpy
 RUN pip install scipy
-RUN apt-get install liblzma-dev
 RUN pip install pandas
 RUN pip install pandas-profiling[notebook,html]
 
