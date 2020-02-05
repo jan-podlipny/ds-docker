@@ -64,6 +64,7 @@ RUN pip install ipywidgets
 #scientific stack
 RUN pip install numpy
 RUN pip install scipy
+RUN pip statsmodels
 
 #tabular data
 RUN pip install pandas
@@ -81,6 +82,9 @@ RUN pip install plotly
 RUN pip install scikit-learn
 RUN pip install lightgbm
 RUN pip install xgboost
+
+#scikit-learn-style transformer
+RUN pip install category_encoders
 
 ENV MAIN_PATH=/usr/local/bin/default_risk
 ENV LIBS_PATH=${MAIN_PATH}/libs
