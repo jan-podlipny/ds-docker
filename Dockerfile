@@ -74,8 +74,7 @@ RUN pip install pandas-profiling[notebook,html]
 RUN pip install matplotlib
 RUN pip install seaborn
 RUN pip install plotly
-
-#RUN pip install 'holoviews[all]'
+RUN pip install 'holoviews[all]'
 
 
 #machine learning
@@ -83,8 +82,12 @@ RUN pip install scikit-learn
 RUN pip install lightgbm
 RUN pip install xgboost
 
-#scikit-learn-style transformer
+#scikit-learn-contrib 
 RUN pip install category_encoders
+RUN pip install forestci
+RUN pip install imbalanced-learn
+
+
 
 ENV MAIN_PATH=/usr/local/bin/default_risk
 ENV LIBS_PATH=${MAIN_PATH}/libs
