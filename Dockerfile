@@ -72,7 +72,9 @@ RUN pip install pandas-profiling[notebook,html]
 #visualization
 RUN pip install matplotlib
 RUN pip install seaborn
-RUN pip install plotly==4.5.0
+RUN pip install plotly
+
+#RUN pip install 'holoviews[all]'
 
 
 #machine learning
