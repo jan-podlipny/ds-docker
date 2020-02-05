@@ -64,7 +64,7 @@ RUN pip install ipywidgets
 #scientific stack
 RUN pip install numpy
 RUN pip install scipy
-RUN pip statsmodels
+RUN pip install statsmodels
 
 #tabular data
 RUN pip install pandas
