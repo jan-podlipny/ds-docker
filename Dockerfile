@@ -87,6 +87,9 @@ RUN pip install category_encoders
 RUN pip install forestci
 RUN pip install imbalanced-learn
 
+#ml interpretability
+RUN pip install lime
+
 
 
 ENV MAIN_PATH=/usr/local/bin/default_risk
