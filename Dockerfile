@@ -81,7 +81,7 @@ RUN pip install plotly
 RUN pip install scikit-learn
 RUN pip install lightgbm
 RUN pip install xgboost
-RUN pip install torch==1.4.0+cpu torchvision==0.5.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
+RUN pip install pytorch
 
 #scikit-learn-contrib 
 RUN pip install category_encoders
